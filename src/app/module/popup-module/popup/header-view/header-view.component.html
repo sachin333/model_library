@@ -1,0 +1,6 @@
+<header>
+    <h1 mat-dialog-title>{{title}}</h1>
+    <button *ngIf="closeButton" (click)="close.emit()">
+        <mat-icon>close</mat-icon>
+    </button>
+</header>

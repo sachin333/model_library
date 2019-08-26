@@ -1,0 +1,23 @@
+<div class="top-pane-toolbar toolbar">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">File</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onNewClick($event)">New</button>
+        <button mat-menu-item (click)="onLoadClick($event)">Open</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="onSaveClick($event)">Save</button>
+        <button mat-menu-item (click)="onSaveClick($event)">Save As</button>
+        <button mat-menu-item (click)="onCloseClick($event)">Close</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="onLoadClick($event)">Exit</button>
+    </mat-menu>
+
+    <div class="seperator"></div>
+
+    <button class="action-item icon-common icon-connect" (click)="onConnectClick($event)" [ngClass]="{'connectorMode':connectorModeEnabled}" title="Connect"></button>
+    <button class="action-item icon-common icon-delete" (click)="onDeleteClick($event)" [disabled]="deleteDisabled" title="Delete"></button>
+
+    <div class="seperator"></div>
+    <app-model-control-bar></app-model-control-bar>
+</div>

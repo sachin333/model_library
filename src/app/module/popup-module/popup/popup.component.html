@@ -1,0 +1,11 @@
+<div class="popup-component" [ngClass]="popupClass">
+    <header>
+        <ng-content select='[popup-header]'></ng-content>
+    </header>
+    <section>
+        <ng-content select='[popup-content]'></ng-content>
+    </section>
+    <footer mat-dialog-actions>
+        <ng-content select='[popup-footer]'></ng-content>
+    </footer>
+</div>

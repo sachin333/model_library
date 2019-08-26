@@ -1,0 +1,8 @@
+<div #svgCanvasContainer [ngClass]="{'svg-canvas-container-move':dragMoveAllowed}" class="svg-canvas-container">
+    <svg xmlns="http://www.w3.org/2000/svg" class="svg-canvas" width="100%" height="100%" (dragenter)="dragEnter($event)" (drop)="itemDropped($event)" (dragover)="dragOver($event)">
+
+        <g #svgCanvasElement>
+        </g>
+    </svg>
+    <canvas #canvas width="800" height="800" style="display:none" crossorigin="anonymous"></canvas>
+</div>

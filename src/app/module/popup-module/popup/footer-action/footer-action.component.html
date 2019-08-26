@@ -1,0 +1,10 @@
+<footer>
+    <button mat-button *ngIf="options?.cancel" (click)="optionSelected('cancel')">Cancel</button>
+    <button mat-raised-button color="primary" *ngIf="options?.ok" (click)="optionSelected('ok')">OK</button>
+    <button mat-raised-button color="primary" *ngIf="options?.yes" (click)="optionSelected('yes')">Yes</button>
+    <button mat-button *ngIf="options?.no" (click)="optionSelected('no')">No</button>
+    <button mat-button *ngIf="options?.close" (click)="optionSelected('close')">Close</button>
+    <button mat-raised-button color="primary" *ngIf="options?.import" (click)="optionSelected('import')">Import</button>
+    <button mat-raised-button color="primary" *ngIf="options?.save" (click)="optionSelected('save')">Save</button>
+    <button [disabled]="disableButtons?.has(idx)" mat-button mat-raised-button color="primary" *ngFor="let i of options?.button;let idx = index" (click)="optionSelected('customButton',idx)">{{i}}</button>
+</footer>

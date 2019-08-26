@@ -1,0 +1,38 @@
+.html-connector-element
+    position: absolute
+    &[disabled]
+        pointer-events: none
+    img
+        right: calc(-100% + 8px)
+        position: relative
+        &.axis-new
+            bottom: 13px
+            transform: rotate(272deg)
+    .line-hover-style        
+        border: 1px solid red
+    .line-top-left-middle
+        width: 2px
+        border: 1px solid black
+        position: relative
+        left: 0
+        height: 50%
+        &.axis-new
+            height: 100%
+    .line-left-right-middle
+        width: 100%
+        height: 2px
+        border: 1px solid black
+        position: relative
+        &.axis-new
+            bottom: 0
+    .line-botton-right-middle
+        width: 2px
+        border: 1px solid black
+        position: relative
+        left: calc(100% - 2px)
+        height: 50%
+        &.axis-new
+            display: none
+
+
+        

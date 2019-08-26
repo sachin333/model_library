@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../src/assets/css/global"  
+@import "../src/assets/css/icon-repository"
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css'
+@import '../src/assets/font/material.css'
+@import '../src/app/module/popup-module/popup/popup-style.sass'
+@import '../src/app/views/popup/app-popup.style.sass'
+
+body
+    margin: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-family: sans-serif;
+    overflow: hidden
+
+html
+    overflow: hidden
+    overflow-y: hidden !important
+
+
+.toolbar
+    font-size: 10pt
+
+textarea
+    resize: none !important
+
+svg.svg-canvas
+    .action-connector
+        stroke-width: 2px
+        & path.selected
+            stroke: red
+        &:hover path
+            stroke: red
+            cursor: pointer
+    /*.action-connector
+        pointer-events: none;*/
+    .svg-action-item
+        rx: 5px
+        ry: 5px
+        fill: green
+        stroke: black
+        stroke-width: 1px
+        height: 50px
+        width: 100px
+        &.input-action
+            fill: $input_action_color
+            rx: 50%
+            ry: 50%
+        &.treasury-input-action
+            fill: $treasury_action_color
+            rx: 25
+            ry: 25
+        &.output-action
+            fill: $output_action_color
+        &.action
+            fill: $intermediate_action_color
+            rx: 0
+            ry: 0
+    foreignObject
+        height: 50px
+        width: 100px
+        pointer-events: none
+        
+        div.display-label
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            text-align: center
+            color: black
+            padding-left: 3px
+            padding-right: 3px
+            font-size: 12px
+            user-select: none
+
+    .selected
+        stroke-width: 3px
+   
+
+.mat-form-field.mat-focused .mat-form-field-label 
+    color: rgba(255,255,255,.7)
+
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary
+    background-color: #3f51b5
+

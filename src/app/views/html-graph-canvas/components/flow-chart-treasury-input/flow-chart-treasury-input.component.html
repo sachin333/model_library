@@ -1,0 +1,3 @@
+<div #actionItem (cdkDragMoved)="onDragMoveHandler($event)" (click)="onClickHandler(event)" [cdkDragDisabled]="dragDisabled" class="flow-chart-action-item flow-chart-item treasury-input-item" cdkDragBoundary=".graph-canvas" cdkDrag>
+    <p>{{data.displayLabel}}</p>
+</div>

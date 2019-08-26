@@ -1,0 +1,42 @@
+@import "../../../assets/css/global"
+
+.left-control-pane
+    display: flex
+    //flex-direction: column
+    //width: 60px
+    height: 100%
+    align-items: center
+    //background-color: #777
+    .action-item
+        //margin-top: 10px
+        margin-left: 10px
+        width: 70px
+        height: 35px
+        border: none
+        border-radius: 3px
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: 35px 35px
+        transition: scale 2s
+        border: 2px solid
+        border-radius: 8px
+        font-size: 7.5pt
+        font-weight: bold
+        padding: 0 5px 0 5px
+        &.type_input
+            background-color: $input_action_color
+            border-radius: 50%
+        &.type_treasury_input
+            background-color: $treasury_action_color
+            border-radius: 29px            
+        &.type_action
+            background-color: $intermediate_action_color
+            border-radius: 0
+        &.type_output
+            background-color: $output_action_color
+        &:hover
+           transform: scale(1.10)

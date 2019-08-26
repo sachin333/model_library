@@ -1,0 +1,21 @@
+<div class="formula-builer-view" cdkDropList (cdkDropListDropped)="drop($event)">
+
+    <!--ng-container *ngFor="let item of equationItem">
+        <div *ngIf="item.type===TYPE_LABEL" class="equation-item" cdkDrag>{{item.label}}</div>
+        <div *ngIf="item.type===TYPE_OPERATOR" class="equation-item" cdkDrag>
+            <select [(ngModel)]="item.value">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+      </select>
+        </div>
+        <div *ngIf="item.type===TYPE_GROUP" [cdkDragDisabled]="true" class="equation-item" cdkDrag>
+            <app-formula-builder></app-formula-builder>
+        </div>
+    </ng-container-->
+    <mwl-text-input-autocomplete-container>
+        <textarea [disabled]="inputDisable" (input)="onInput($event)" [menuComponent]="menuComponent" (choiceSelected)="onChoiceSelected($event)" placeholder="Type @ for hint..." class="form-control" rows="5" [(ngModel)]="formControlValue" mwlTextInputAutocomplete
+            [findChoices]="findChoices" [getChoiceLabel]="getChoiceLabel">
+        </textarea>
+    </mwl-text-input-autocomplete-container>
+</div>

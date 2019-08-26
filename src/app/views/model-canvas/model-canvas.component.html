@@ -1,0 +1,6 @@
+<div #dragDropCanvas class="drag-drop-canvas" (mouseleave)="onMouseOut($event)" (mousemove)="onMouseMove($event)" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()" (dragenter)="dragEnter($event)" (drop)="itemDropped($event)" (dragover)="dragOver($event)">
+    <div>
+        <app-action-item [canvas]="canvasLayer" *ngFor="let item of actionItems" [actionItem]="item" [boundingRect]="boundingRect"></app-action-item>
+    </div>
+    <canvas #canvasLayer class="canvas-layer" width="500px" height="500px"></canvas>
+</div>

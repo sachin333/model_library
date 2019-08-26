@@ -1,0 +1,23 @@
+<app-popup popupClass="open-model-popup-view">
+    <app-header-view title="Open Model" popup-header (close)="onCloseClick()"></app-header-view>
+    <div popup-content>
+        <ul>
+            <li *ngFor="let model of models">
+                <input type="radio" name="radio-grp" [(ngModel)]="selectedModel" [value]="model">
+                <div (click)="selectedModel=model">
+                    <label>{{model.name}}</label>
+                    <label> {{model.lastUpdated | date}} </label>
+                    <mat-divider></mat-divider>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <label>Description</label>
+            <textarea readonly>{{selectedModel?.desc}}</textarea>
+            <div class="model-viewer">
+                <app-svggraph-canvas previewOnly="true" [data]="selectedModel?.nodes"></app-svggraph-canvas>
+            </div>
+        </div>
+    </div>
+    <app-footer-action (select)="onActionSelect($event)" popup-footer [options]="popupActions"></app-footer-action>
+</app-popup>

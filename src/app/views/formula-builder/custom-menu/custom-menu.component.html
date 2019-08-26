@@ -1,0 +1,7 @@
+<ul *ngIf="choices?.length > 0" #dropdownMenu class="dropdown-menu" [style.top.px]="position?.top" [style.left.px]="position?.left">
+    <li *ngFor="let choice of choices; trackBy:trackById" [class.active]="activeChoice === choice" [ngClass]="{'operator-choice': choice.type===0}">
+        <a href="javascript:;" (click)="selectChoice.next(choice)">
+      {{ choice }}
+    </a>
+    </li>
+</ul>

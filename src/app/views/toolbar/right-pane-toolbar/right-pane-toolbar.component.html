@@ -1,0 +1,25 @@
+<div class="right-pane-toolbar toolbar">
+    <header>Properties</header>
+    <form [formGroup]="form">
+        <div class="container grid-container">
+            <header>General</header>
+            <label>Display label</label><input formControlName="displayLabel" type="text">
+            <label>Description</label><input formControlName="desc" type="text">
+            <label>Use global value</label><input formControlName="useGlobalValue" type="checkbox">
+            <label>Default value</label><input formControlName="defaultValue" type="text">
+            <label>Global value</label>
+            <select formControlName="globalValue">
+                <option selected disabled></option>
+                <option>VAT</option>
+                <option>Payment rate</option>
+                <option>Credit interest</option>
+                <option>BNR</option>
+            </select>
+
+        </div>
+    </form>
+    <div class="container">
+        <header>Formula</header>
+        <app-formula-builder [dataInput]="equationData" (formulaChange)="formulaChanged($event)"></app-formula-builder>
+    </div>
+</div>

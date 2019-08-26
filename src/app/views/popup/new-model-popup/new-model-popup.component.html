@@ -1,0 +1,15 @@
+<app-popup popupClass="new-model-popup-view">
+    <app-header-view title="New Model" popup-header (close)="onCloseClick()"></app-header-view>
+    <div popup-content>
+        <form [formGroup]="form">
+            <mat-form-field>
+                <input matInput placeholder="Model Name*" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <textarea matInput placeholder="Description" formControlName="desc"></textarea>
+            </mat-form-field>
+        </form>
+    </div>
+    <app-footer-action [disableButtons]="disableButtons" (select)="onActionSelect($event)" popup-footer [options]="popupActions"></app-footer-action>
+</app-popup>
