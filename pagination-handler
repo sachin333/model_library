@@ -1,0 +1,38 @@
+export class PaginationHandler {
+    public static readonly DefaultItemCount = 15;
+    private startPage = -1;
+    private _itemCount = PaginationHandler.DefaultItemCount;
+    private _totalRecordCount: number;
+
+    hasMorePages(): boolean {
+
+        if (isNaN(this._totalRecordCount) || this._totalRecordCount < 0) {
+            return true;
+        }
+        // means there is no records
+        if (this._totalRecordCount === 0) {
+            return false;
+        }
+        if (this._totalRecordCount > ((this.startPage + 1) * this._itemCount)) {
+            return true;
+        }
+        // console.log('hasMorePages', this._totalRecordCount, this.startPage, this._itemCount);
+        return false;
+    }
+    getNextStartIndex(): number {
+        return (++this.startPage) * this._itemCount;
+    }
+    get itemCount(): number {
+        return this._itemCount;
+    }
+    set itemCount(val: number) {
+        this._itemCount = val;
+    }
+    resetPagination() {
+        this.startPage = -1;
+        this._totalRecordCount = -1;
+    }
+    set totalRecordCount(val: number) {
+        this._totalRecordCount = parseInt(val + '');
+    }
+}
